@@ -1,0 +1,298 @@
+*,
+::before,
+::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    background-color: var(--Light-Grayish-Violet);
+}
+:root {
+    /* #### Text  */
+
+--Pale-Violet : hsl(276, 100%, 81%); /*(sub-heading at the top of the app UI) */
+--Moderate-Violet: hsl(276, 55%, 52%); /*(chat on the left)*/
+--Desaturated-Dark-Violet : hsl(271, 15%, 43%); /*(chat on the right)*/
+--Grayish-Blue : hsl(206, 6%, 79%); /*(placeholder text)*/
+--Very-Dark-Desaturated-Violet : hsl(271, 36%, 24%); /*(main heading)*/
+--Dark-Grayish-Violet : hsl(270, 7%, 64%); /*(paragraph)*/
+
+--White: hsl(0, 0%, 100%);
+--Light-Grayish-Violet : hsl(270, 20%, 96%); /*(app background)*/
+--Very-Dark-Desaturated-Violet : hsl(271, 36%, 24%); /*(submit button background)*/
+--Very-Light-Magenta : hsl(289, 100%, 72%); /*(radio button outline)*/
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* small  */
+@media (min-width: 767px) {
+    .container {
+        width: 750px;
+    }
+/* medium  */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large  */
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 800px;
+    }
+}
+/* end global rulez  */
+.parent {
+    position: relative;
+}
+@media (min-width: 767px) {
+    .parent {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+    }
+}
+.parent::before {
+    content: "";
+    position: absolute;
+    left: -310px;
+    top: -300px;
+    width: 500px;
+    height: 700px;
+    border-radius: 110px;
+    z-index: -1;
+    background-image: linear-gradient(to bottom, hsl(264, 100%, 61%),hsl(293, 100%, 63%));
+}
+
+.mobile_content {
+    z-index: 1;
+    width: 90%;
+    margin: 50px auto;
+    background-color: var(--Light-Grayish-Violet);
+    border: 10px solid var(--White);
+    border-radius: 30px;
+    box-shadow: 0px 10px 20px -10px black;
+}
+@media (min-width: 767px) {
+    .mobile_content {
+        flex-basis: 40%;
+    }
+    
+}
+.mobile_head {
+    background-image: linear-gradient(to right,hsl(264, 100%, 61%),hsl(293, 100%, 63%) );
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: relative;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+.mobile_head::before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 30px;
+    left: 50%;
+    top: -10px;
+    background: var(--White);
+    border-radius: 30px;
+    transform: translateX(-50%);
+}
+.mobile_content .mobile_head .name {
+    display: flex;
+    align-items: center;
+    color: var(--White);
+    margin-left: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+.mobile_content .mobile_head .name::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-width: 3px;
+    border-color: var(--Moderate-Violet) var(--Moderate-Violet) var(--White) var(--White);
+    border-style: solid;
+    background-color: var(--Moderate-Violet);
+    transform: rotate(45deg) translatey(-50%);
+    border-radius: 3px;
+}
+.mobile_content .mobile_head .name .user {
+    margin-left: 20px;
+}
+.mobile_content .mobile_head .name span {
+  display: block;
+}
+.mobile_content .mobile_head .name span:nth-child(2) {
+  color: var(--Grayish-Blue);
+  font-size: 0.7rem;
+  margin-top: 5px;
+}
+.mobile_content .mobile_head .name img {
+    max-width: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--Light-Grayish-Violet);
+}
+.mobile_content .mobile_head .dote {
+    height: 20px;
+}
+.mobile_content .mobile_head .dote span {
+    background-color: var(--White);
+    width: 3px;
+    height: 3px;
+    display: block;
+    margin-top: 3px;
+}
+.mobile_content p{
+    max-width: 60%;
+    background-color: var(--Grayish-Blue);
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 0.6rem;
+    margin-top: 10px;
+    margin-left: 10px;
+    line-height: 1.4;
+}
+.mobile_content p:nth-child(5) {
+    background-color: var(--White);
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 0;
+}
+.mobile_content p:nth-child(6) {
+    background-color: var(--White);
+    margin-left: auto;
+    margin-right: 10px;
+}
+.mobile_content .images {
+    text-align: right;
+    padding: 10px;
+}
+.mobile_content .images img{
+   width: 50px;
+   border-radius: 15px;
+   margin-right: 5px;
+}
+.mobile_content .price {
+    color: var(--White);
+    background-image:
+     linear-gradient(to right, hsl(293, 100%, 63%),hsl(264, 100%, 61%));
+    height: 50px;
+    width: 80%;
+    border-radius: 15px;
+    border-bottom-left-radius: 10px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    position: relative;
+}
+.mobile_content .price::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+    left: 15px;
+}
+.mobile_content .price strong {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.mobile_content .price span {
+    margin-left: 20px;
+}
+.mobile_content input[type="text"] {
+    display: inline-block;
+    padding: 15px 40px;
+    width: 90%;
+    margin: 0px 15px 20px;
+    border-radius: 30px;
+    border: none;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+.mobile_content .form {
+    position: relative;
+}
+.mobile_content .form::before  {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 25px;
+    top: 3px;
+    background-color: var(--Very-Dark-Desaturated-Violet);
+    border-radius: 50%;
+}
+.mobile_content .form::after {
+    content: "";
+    position: absolute;
+    border-width: 4px;
+    border-color: var(--White) var(--White) transparent transparent;
+    border-style: solid;
+    right: 40px;
+    top: 16px;
+    transform: rotate(45deg);
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+}
+
+.parent .text {
+    text-align: center;
+}
+@media (min-width: 767px) {
+    .parent .text {
+        flex-basis: 40%;
+    }
+}
+.parent .text h2{
+   font-size: 2.4rem;
+   margin: 20px 0px 25px;
+   color: var(--Very-Dark-Desaturated-Violet);
+}
+.parent .text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--Very-Dark-Desaturated-Violet);
+    margin-bottom: 60px;
+}
+@media (min-width: 767px) {
+    .parent .text p {
+        text-align: left;
+    }
+}
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
